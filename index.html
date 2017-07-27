@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<title>css-grid test</title>
+<style>
+li {
+	list-style: none;
+}
+
+.site {
+	display: grid;
+/*
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+*/
+    grid-template-areas:
+		"title title header"
+		"left main sidebar"
+		"left main sidebar"
+		"footer footer footer"; 
+    grid-gap: 0.5em;
+	background-color: grey;
+}
+
+header {
+	background-color: orange;
+	grid-area: header;	
+}
+
+.page-title {
+	grid-area: title;
+/*
+	grid-column: 1/2;
+	grid-row: 2/4;
+*/
+}
+
+.main-content {
+	background-color: white;
+	grid-area: main;
+}
+
+.sidebar {
+	background-color: gold;
+	grid-area: sidebar;
+}
+
+.footer {
+	background-color: green;
+	grid-area: footer;
+}
+</style>
+</head>
+<body>
+<div class="site">
+  <header>my headers...<nav>bla</nav></header>
+  <h1 class="page-title">testing css-grid here</h1>
+  <main class="main-content">
+	<div>I'm testing CSS Grid with this site, check out the link on the sidebar</div>
+    <iframe width="100%" src="https://www.youtube-nocookie.com/embed/7kVeCqQCxlk" frameborder="0" allowfullscreen></iframe> 
+  </main>
+  <aside class="sidebar">
+    <ul>
+      <li><b>sidebar</b></li>
+      <li><a href="https://gridbyexample.com/examples/example1/">Grid by example</a></li>
+    </ul>
+  </aside>
+  <footer class="footer">footer</footer>
+</div>
+</body>
+</html>
